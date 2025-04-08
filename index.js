@@ -46,7 +46,14 @@ app.get('/unsubscribe', (req, res) => {
   `);
 });
 
-// Start server
-app.listen(PORT, () => {
-  console.log(`🚀 Unsubscribe server running on port ${PORT}`);
-});
+// Route: GET /unsub-list
+app.get('/unsub-list', (req, res) => {
+    const unsubList = JSON.parse(fs.readFileSync(unsubFile));
+    res.json(unsubList);
+  });
+  
+  // Start server
+  app.listen(PORT, () => {
+    console.log(`🚀 Unsubscribe server running on port ${PORT}`);
+  });
+  
