@@ -35,6 +35,7 @@ app.get('/unsubscribe', (req, res) => {
   if (!unsubList.includes(email)) {
     unsubList.push(email);
     fs.writeFileSync(unsubFile, JSON.stringify(unsubList, null, 2));
+    console.log('✅ Updated unsub list:', unsubList); // <-- Add this line
   }
 
   res.send(`
