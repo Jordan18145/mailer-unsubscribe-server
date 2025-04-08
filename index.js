@@ -56,4 +56,3 @@ app.get('/unsub-list', (req, res) => {
   app.listen(PORT, () => {
     console.log(`🚀 Unsubscribe server running on port ${PORT}`);
   });
-   
