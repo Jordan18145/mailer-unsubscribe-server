@@ -5,7 +5,7 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-const unsubFile = path.join(__dirname, 'unsubscribed.json');
+const unsubFile = path.join('/data', 'unsubscribed.json');
 
 // Ensure unsubscribed file exists
 if (!fs.existsSync(unsubFile)) {
