@@ -12,6 +12,16 @@ if (!fs.existsSync(unsubFile)) {
   fs.writeFileSync(unsubFile, JSON.stringify([]));
 }
 
+// Route: GET /
+app.get('/', (req, res) => {
+  res.send(`
+    <div style="font-family: sans-serif; text-align: center; padding: 50px;">
+      <h2>Welcome to the Mailer Unsubscribe Service</h2>
+      <p>To unsubscribe, please use the link provided in your email.</p>
+    </div>
+  `);
+});
+
 // Route: GET /unsubscribe?email=...
 app.get('/unsubscribe', (req, res) => {
   const email = req.query.email;
